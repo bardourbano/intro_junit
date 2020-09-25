@@ -125,12 +125,6 @@ public class CalculadoraTest {
 	}
 
 	@Test
-	public void testSomatórioNegativo() {
-		int somatorio = calc.somatoria(-3);
-		assertTrue(somatorio == -6);
-	}
-
-	@Test
 	public void testPositivoComNumeroPositivo() {
 		boolean positivo = calc.ehPositivo(1);
 		assertTrue(positivo);
