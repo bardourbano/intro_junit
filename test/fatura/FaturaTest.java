@@ -1,9 +1,10 @@
 package fatura;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.jupiter.api.BeforeEach;
 
 public class FaturaTest {
     private Fatura fatura;
@@ -13,6 +14,7 @@ public class FaturaTest {
         this.fatura = new Fatura("01/01/2020", 500.00, "Fulano de Tal");
     }
 
+    @Test
     public void testCriaFatura() {
         assertAll(
                 "fatura",
@@ -22,5 +24,3 @@ public class FaturaTest {
         );
     }
 }
-
-
