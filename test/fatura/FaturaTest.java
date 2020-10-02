@@ -28,4 +28,6 @@ public class FaturaTest {
     public void testQuantidadeDePagamento() {
         assertEquals(0, fatura.getQuantidadePagamentos());
     }
+
+
 }
