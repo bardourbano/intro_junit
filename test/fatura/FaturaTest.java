@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class FaturaTest {
     private Fatura fatura;
@@ -27,6 +26,6 @@ public class FaturaTest {
 
     @Test
     public void testQuantidadeDePagamento() {
-        assertArrayEquals(1, fatura.getQuantidadePagamentos());
+        assertEquals(0, fatura.getQuantidadePagamentos());
     }
 }

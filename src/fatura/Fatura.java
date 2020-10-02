@@ -29,4 +29,8 @@ public class Fatura {
     public String getData() {
         return data;
     }
+
+    public int getQuantidadePagamentos() {
+        return pagamentos.size();
+    }
 }
