@@ -6,7 +6,6 @@ import pagamento.Pagamento;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FaturaTest {
     private Fatura fatura;
@@ -39,19 +38,4 @@ public class FaturaTest {
 
         assertEquals(1, fatura.getQuantidadePagamentos());
     }
-
-    @Test
-    public void testFaturaPaga() {
-        Pagamento pagamento = new Pagamento(
-                250.00,
-                "01/01/2021",
-                "BOLETO"
-        );
-
-        fatura.addPagamento(pagamento);
-        fatura.addPagamento(pagamento);
-
-        assertTrue(fatura.getStatusPagamento());
-    }
-
 }
