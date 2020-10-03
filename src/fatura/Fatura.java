@@ -38,14 +38,7 @@ public class Fatura {
         this.pagamentos.add(pagamento);
     }
 
-    public boolean getStatusPagamento() {
-
-        double total_pago = 0.00;
-
-        for (Pagamento pagamento : this.pagamentos) {
-            total_pago += pagamento.getValor();
-        }
-
-        return total_pago >= this.total;
+    public ArrayList<Pagamento> getPagamentos() {
+        return pagamentos;
     }
 }

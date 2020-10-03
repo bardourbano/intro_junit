@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ProcessadorPagamentoTest {
 
@@ -30,4 +31,9 @@ public class ProcessadorPagamentoTest {
         assertEquals(this.boletos.size(), this.fatura.getQuantidadePagamentos());
     }
 
+    @Test
+    public void testFaturaPaga() {
+        ProcessadorPagamento.pagar(this.fatura, this.boletos);
+        assertTrue(ProcessadorPagamento.getFaturaPaga(this.fatura));
+    }
 }

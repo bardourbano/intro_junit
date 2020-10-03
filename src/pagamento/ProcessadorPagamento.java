@@ -14,4 +14,14 @@ public class ProcessadorPagamento {
             );
         }
     }
+
+    public static boolean getFaturaPaga(Fatura fatura) {
+        double total_pago = 0.00;
+
+        for (Pagamento pagamento : fatura.getPagamentos()) {
+            total_pago += pagamento.getValor();
+        }
+
+        return total_pago >= fatura.getTotal();
+    }
 }
