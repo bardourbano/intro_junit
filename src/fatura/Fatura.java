@@ -33,4 +33,19 @@ public class Fatura {
     public int getQuantidadePagamentos() {
         return pagamentos.size();
     }
+
+    public void addPagamento(Pagamento pagamento) {
+        this.pagamentos.add(pagamento);
+    }
+
+    public boolean getStatusPagamento() {
+
+        double total_pago = 0.00;
+
+        for (Pagamento pagamento : this.pagamentos) {
+            total_pago += pagamento.getValor();
+        }
+
+        return total_pago >= this.total;
+    }
 }

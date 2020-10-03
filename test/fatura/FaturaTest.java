@@ -2,9 +2,11 @@ package fatura;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import pagamento.Pagamento;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FaturaTest {
     private Fatura fatura;
@@ -29,5 +31,27 @@ public class FaturaTest {
         assertEquals(0, fatura.getQuantidadePagamentos());
     }
 
+    @Test
+    public void testAdicionaPagamento() {
+        fatura.addPagamento(
+                new Pagamento(250.00, "01/01/2021", "BOLETO")
+        );
+
+        assertEquals(1, fatura.getQuantidadePagamentos());
+    }
+
+    @Test
+    public void testFaturaPaga() {
+        Pagamento pagamento = new Pagamento(
+                250.00,
+                "01/01/2021",
+                "BOLETO"
+        );
+
+        fatura.addPagamento(pagamento);
+        fatura.addPagamento(pagamento);
+
+        assertTrue(fatura.getStatusPagamento());
+    }
 
 }
